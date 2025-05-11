@@ -3,6 +3,8 @@
     --main-font-family-text: "Montserrat";
     --main-font-size-title: 48px;
     --main-border-radius: 30px;
+    --main-trasform-scale: scale(1.05);
+    --main-transition: transform 0.5s ease;
 }
 
 * {
@@ -19,7 +21,7 @@ body {
 /*start*/
 .section-registration {
     height: 100vh;
-    background: url(../img/background_registration.svg);
+    background: url(../img/background_registration.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -91,6 +93,11 @@ body {
     margin-bottom: 40px;
     width: fit-content;
     line-height: 100%;
+    transition: var(--main-transition);
+}
+
+.register-btn:hover {
+    transform: var(--main-trasform-scale);
 }
 
 .participants {
@@ -106,6 +113,11 @@ body {
     border-radius: 50%; 
     background: rgba(170, 4, 4, 0.65);
     backdrop-filter: blur(7.050000190734863px);
+    transition: var(--main-transition);
+}
+
+.participants:hover {
+    transform: var(--main-trasform-scale);
 }
 
 .participants .number {
@@ -155,8 +167,103 @@ body {
 /*раздел с форматом соревнований(второй экран)*/
 /*start*/
 .section-competition-format {
+    padding: 30px;
     height: 100vh;
     background-color: white;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;   
+}
+
+.competition-format-conteiner {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--main-border-radius);
+    background: linear-gradient(253deg, rgba(7, 139, 233, 0.80) -11.51%, rgba(240, 248, 255, 0.80) 93.97%);
+    backdrop-filter: blur(55.099998474121094px);
+    padding: 0 40px;
+    text-align: left;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.competition-format-conteiner h1 {
+    width: 50%;
+    font-family: var(--main-font-family-title);
+    font-size: var(--main-font-size-title);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    line-height: 125%;
+}
+
+.competition-format-conteiner .description {
+    width: 50%;
+    font-size: 24px;
+    line-height: 138%;
+    font-style: italic;
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+.competition-format-conteiner .amount-price {
+    width: 50%;
+    font-size: 24px;
+    line-height: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.competition-format-conteiner .price {
+    width: 50%;
+    font-size: 24px;
+    line-height: 132%;
+    font-style: italic;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-variant: small-caps;
+}
+
+.img-competition {
+    position: absolute;
+    left: 50%;
+    top:3.6%;
+}
+
+.blue-circle {
+    position: absolute;
+    left: 920px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 380px; 
+    height: 380px; 
+    border-radius: 50%; 
+    flex-shrink: 0;
+    background: rgba(44, 96, 180, 0.71);
+    backdrop-filter: blur(7.050000190734863px);
+    transition: var(--main-transition);
+    z-index: 10;
+}
+
+.blue-circle:hover {
+    transform: var(--main-trasform-scale);
+}
+
+.blue-circle .text {
+    color: white;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132%;
+    font-variant: all-small-caps;
 }
 /*end*/
 
@@ -232,6 +339,11 @@ body {
     border-radius: 50%; 
     background: rgba(170, 4, 4, 0.65);
     backdrop-filter: blur(7.050000190734863px);
+    transition: var(--main-transition);
+}
+
+.cirle-speed:hover {
+    transform: var(--main-trasform-scale);
 }
 
 .cirle-speed .text {
@@ -297,11 +409,11 @@ body {
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: var(--main-transition);
 }
 
 .fefu-image:hover {
-    transform: scale(1.03);
+    transform: var(--main-trasform-scale);
 }
 
 /* Адаптация */
@@ -479,6 +591,11 @@ body {
     flex: 0 1 auto;
 }
 
+.footer-block a {
+    text-decoration: none;
+    color: black;
+}
+
 .footer-line {
     font-size: 20px;
     font-style: normal;
@@ -486,7 +603,14 @@ body {
     line-height: normal;
     text-transform: uppercase;
     white-space: nowrap;
+    transition: var(--main-transition);
 }
+
+.footer-line:hover {
+    transform: var(--main-trasform-scale);
+    color: #2B80FF;
+}
+
 
 @media (max-width: 768px) {
     .footer {
